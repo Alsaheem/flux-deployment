@@ -9,6 +9,8 @@ spec:
   interval: 10s
   ref:
     branch: dev
+  secretRef:
+    name:  flux-git-deploy
   url: https://github.com/Alsaheem/flux-deployment
 
 
@@ -22,5 +24,8 @@ spec:
   interval: 10s
   ref:
     branch: master
+  secretRef:
+    name:  flux-git-deploy
+
   url: https://github.com/Alsaheem/flux-deployment
 
