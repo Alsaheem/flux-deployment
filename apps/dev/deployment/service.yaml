@@ -11,7 +11,7 @@ spec:
       port: 9898
       protocol: TCP
       targetPort: http
-    - port: 91999
+    - port: 9999
       targetPort: 31234
       protocol: TCP
       name: grpc
