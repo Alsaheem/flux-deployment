@@ -8,5 +8,6 @@ bases:
 
 resources:
   - service.yaml
+  - namespace.yaml
 patchesStrategicMerge:
   - patches/workload.yaml
