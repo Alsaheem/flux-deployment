@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podinfo
+  namespace: dev
+spec:
+  minReadySeconds: 3
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: podinfo
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9797"
+      labels:
+        app: podinfo
+    spec:
+      containers:
+      - name: podinfod
+        image: ghcr.io/stefanprodan/podinfo:6.2.0
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: PODINFO_UI_COLOR
+          value: "#FFFF00"

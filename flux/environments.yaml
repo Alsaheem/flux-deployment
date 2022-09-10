@@ -1,0 +1,29 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: deployment-dev
+  namespace: flux-system
+spec:
+  interval: 2m0s
+  path: ./apps/dev
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-deploy-dev
+  targetNamespace: default
+
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: deployment-prod
+  namespace: flux-system
+spec:
+  interval: 2m0s
+  path: ./apps/prod
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-deploy-prod
+  targetNamespace: default

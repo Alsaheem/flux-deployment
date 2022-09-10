@@ -1,0 +1,26 @@
+# gitrepositories
+
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-deploy-dev
+  namespace: flux-system
+spec:
+  interval: 10s
+  ref:
+    branch: dev
+  url: https://github.com/Alsaheem/flux-deployment
+
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-deploy-prod
+  namespace: flux-system
+spec:
+  interval: 10s
+  ref:
+    branch: main
+  url: https://github.com/Alsaheem/flux-deployment
+
