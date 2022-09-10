@@ -1,1 +1,1 @@
-podinfo test
+flux-deployment
